@@ -2,10 +2,11 @@
 
 class Controller
 {
-    function defaultAction()
+    // Default action
+    function index()
     {
-        echo 'Default controller!';
-    }    
+        
+    }
 }
 
 #end of controller.php

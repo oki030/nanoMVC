@@ -21,7 +21,7 @@
         }  
     }
 
-    // Set error reporting
+    // Set error reporting ************************************************//    
     if (DEVELOPMENT_ENVIRONMENT == true) 
     {
         error_reporting(E_ALL);
@@ -34,26 +34,28 @@
         ini_set('log_errors', 'On');
         ini_set('error_log', LOGS_PATH.'error.log');
     }    
+    //*********************************************************************//
 
-    // Get controller
+    // Get controller *****************************************************//
     if (!empty($_GET['url'])) $url = $_GET['url'];      
     
     if (isset($url))
 	{               
 		$urlArray = explode('/', $url);
-        $controller = ucwords(array_shift($urlArray));
+        $controller = ucwords(array_shift($urlArray)).'Controller';
         $action = array_shift($urlArray);
         $query_string = $urlArray; 
     }
     else
     {
         // Default controller
-        $controller = 'Index';
-        $action = 'defaultAction';
+        $controller = DEFAULT_CONTROLLER.'Controller';
+        $action = 'index';
         $query_string = array(''); 
     }
+    //*********************************************************************//
                      
-    // Run controller                                   
+    // Run controller *****************************************************//                                       
     if (class_exists($controller))
     {
         $objController = new $controller();
@@ -65,18 +67,19 @@
         else
         {
             // Default action
-            call_user_func_array(array($objController, 'defaultAction'), $query_string);
+            call_user_func_array(array($objController, 'index'), $query_string);
         }
     }   
     else
     {       
         // Default controller
-        $controller = 'Index';
-        $action = 'defaultAction';
+        $controller = DEFAULT_CONTROLLER.'Controller';
+        $action = 'index';
         $query_string = array(''); 
         
         $objController = new $controller();                                                    
         call_user_func_array(array($objController, $action), $query_string);               
-    }              
+    }       
+    //*********************************************************************//       
 			    
 #end of boot.php

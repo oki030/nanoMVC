@@ -1,6 +1,6 @@
 <?php
 
-    // DEVELOPMENT ENVIRONMENT
+    // Development Environment
     define('DEVELOPMENT_ENVIRONMENT', true);
     
     // DB
@@ -8,8 +8,11 @@
     define('DB_USER', 'yourusername');
     define('DB_PASSWORD', 'yourpassword');
     define('DB_HOST', 'localhost');
+    
+    // Default controller
+    define('DEFAULT_CONTROLLER', 'index');    
             
-    // PATHS
+    // Paths
     define('CORE_PATH', ROOT.DS.'core'.DS);
     define('LOGS_PATH', ROOT.DS.'tmp'.DS.'logs'.DS);
     define('APPLICATION_PATH', ROOT.DS.'application'.DS);
