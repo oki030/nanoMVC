@@ -1,3 +1,0 @@
-[17-May-2012 07:59:19 UTC] PHP Notice:  Undefined index: url in D:\Lab\wamp\www\nanoMVC\Framework\public\index.php on line 22
-[17-May-2012 07:59:19 UTC] PHP Stack trace:
-[17-May-2012 07:59:19 UTC] PHP   1. {main}() D:\Lab\wamp\www\nanoMVC\Framework\public\index.php:0

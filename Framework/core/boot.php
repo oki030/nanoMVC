@@ -35,8 +35,9 @@
         ini_set('error_log', LOGS_PATH.'error.log');
     }    
 
-    // Get controller    
-    $url = $_GET['url'];       
+    // Get controller
+    if (!empty($_GET['url'])) $url = $_GET['url'];      
+    
     if (isset($url))
 	{               
 		$urlArray = explode('/', $url);
