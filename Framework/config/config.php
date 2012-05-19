@@ -3,11 +3,12 @@
     // Development Environment
     define('DEVELOPMENT_ENVIRONMENT', true);
     
-    // DB
-    define('DB_NAME', 'yourdatabasename');
-    define('DB_USER', 'yourusername');
-    define('DB_PASSWORD', 'yourpassword');
+    // DB settings   
     define('DB_HOST', 'localhost');
+    define('DB_NAME', 'test');
+    
+    define('DB_USER', 'root');
+    define('DB_PASSWORD', 'root');    
     
     // Default controller
     define('DEFAULT_CONTROLLER', 'index');    

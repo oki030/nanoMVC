@@ -9,11 +9,13 @@ class TestController extends NN_Controller
     
 	function index()
 	{	
-        $this->load->model('test');   
+        $this->load->model('test', 'test_model');   
            
-        $data = $this->test->giveBack();
+        $data = $this->test_model->giveBack();
         
-        $this->load->view('test', $data);       
+        $this->load->view('test', $data);
+        
+        $data = $this->test_model->testDB();                
 	}
 }
 
