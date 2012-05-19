@@ -1,10 +1,19 @@
 <?php
 
-class TestController extends Controller
+class TestController extends NN_Controller
 {		
+    function __construct()
+    {
+        parent::__construct();
+    }
+    
 	function index()
-	{
-		echo 'This is a test!';
+	{	
+        $this->load->model('test');   
+           
+        $data = $this->test->giveBack();
+        
+        $this->load->view('test', $data);       
 	}
 }
 

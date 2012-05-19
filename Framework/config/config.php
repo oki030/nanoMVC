@@ -15,7 +15,9 @@
     // Paths
     define('CORE_PATH', ROOT.DS.'core'.DS);
     define('LOGS_PATH', ROOT.DS.'tmp'.DS.'logs'.DS);
+    
     define('APPLICATION_PATH', ROOT.DS.'application'.DS);
+    
     define('CONTROLLERS_PATH', APPLICATION_PATH.'controllers'.DS);
     define('MODELS_PATH', APPLICATION_PATH.'models'.DS);
     define('VIEWS_PATH', APPLICATION_PATH.'views'.DS);  

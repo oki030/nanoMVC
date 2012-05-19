@@ -1,24 +1,14 @@
 <?php   
+    require_once(CORE_PATH.'controller.php');
+    require_once(CORE_PATH.'model.php'); 
      
-    // Class autoload function
+    // Autoload function of controller classes
     function __autoload($className) 
     {
-        if (file_exists(CORE_PATH.strtolower($className).'.php')) 
-        {
-            require_once(CORE_PATH.strtolower($className).'.php');
-        } 
-        else if (file_exists(CONTROLLERS_PATH.strtolower($className).'.php')) 
+        if (file_exists(CONTROLLERS_PATH.strtolower($className).'.php')) 
         {
             require_once(CONTROLLERS_PATH.strtolower($className).'.php');
-        } 
-        else if (file_exists(MODELS_PATH.strtolower($className).'.php')) 
-        {
-            require_once(MODELS_PATH.strtolower($className).'.php');
-        }
-        else if (file_exists(VIEWS_PATH.strtolower($className).'.php')) 
-        {
-            require_once(VIEWS_PATH.strtolower($className).'.php');
-        }  
+        }               
     }
 
     // Set error reporting ************************************************//    
