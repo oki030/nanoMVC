@@ -70,6 +70,18 @@
         $objController = new $controller();                                                    
         call_user_func_array(array($objController, $action), $query_string);               
     }       
-    //*********************************************************************//       
+    //*********************************************************************//  
+    
+    function echoURL($path)
+    {
+        echo BASE_PATH.$path;
+    }
+    
+    function returnURL($path)
+    {
+        $ret = BASE_PATH.$path;
+        
+        return $ret;
+    }      
 			    
 #end of boot.php

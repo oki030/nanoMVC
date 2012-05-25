@@ -57,6 +57,40 @@ class NN_DB
         $result = mysql_query($query);
             
         return $result;            
+    }
+    
+    function selectQuery($query)
+    {
+        $ret = array();
+        
+        if (!$this->connected) return $ret;
+                        
+        $result = mysql_query($query);
+        
+        if (!$result) return $ret;
+        
+        $num_col = mysql_num_fields($result);              
+        
+        if ($num_col)
+        {
+            for($i = 0; $i<$num_col; $i++)
+            {
+                $ret[mysql_field_name($result, $i)] = array();
+            }    
+            
+            while ($row = mysql_fetch_row($result))
+            {
+                $i = 0;
+                foreach($ret as $key => $value)
+                {
+                    array_push($ret[$key], $row[$i]);
+                    $i++;
+                }                
+            }                    
+        }   
+        
+        mysql_free_result($result);
+        return $ret;                            
     }    
 }
 
